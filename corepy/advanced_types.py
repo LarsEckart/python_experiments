@@ -150,6 +150,25 @@ class CorePython(unittest.TestCase):
         short = {1, 2, 3, 4, 5}
         self.assertEqual(set, short)
 
+    def test_list_comprehension(self):
+        words = "Lars on tubli poiss".split()
+        actual = [len(word) for word in words]
+        self.assertEqual([4, 2, 5, 5], actual)
+
+    def test_set_comprehension(self):
+        words = "Lars on tubli poiss".split()
+        actual = {x[0] for x in words}
+        self.assertEqual({'L', 'o', 't', 'p'}, actual)
+
+    def test_generators(self):
+        def gen123():
+            yield 1
+            yield 2
+            yield 3
+
+        g = gen123()
+        self.assertEqual(next(g), 1)
+
 
 if __name__ == '__main__':
     unittest.main()
