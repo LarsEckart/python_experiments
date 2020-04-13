@@ -16,3 +16,4 @@ class PhoneBook(object):
                 if number1.startswith(number2):
                     return False
         return True
+
