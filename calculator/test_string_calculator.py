@@ -1,8 +1,7 @@
 class StringCalculator:
-    def sum(param):
-        if not param:
-            return 0
-        return int(param)
+    def sum(self, param):
+
+        pass
 
 
 def test_empty_string_returns_zero():
